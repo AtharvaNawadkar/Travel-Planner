@@ -2,3 +2,4 @@ streamlit
 phidata
 phi
 openai
+google-search-results
