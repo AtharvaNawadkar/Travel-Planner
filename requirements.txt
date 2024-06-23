@@ -1,3 +1,4 @@
 streamlit
 phidata
+phi
 openai
