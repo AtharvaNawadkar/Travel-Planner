@@ -13,6 +13,8 @@ load_dotenv()
 st.title("AI Travel Planner ✈️")
 st.caption("Plan your next adventure with AI Travel Planner by researching and planning a personalized itinerary on autopilot using GPT-4o")
 
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+os.environ["SERPAPI_KEY"] = st.secrets["SERPAPI_KEY"]
 # Get API keys from environment variables
 openai_api_key = os.getenv("OPENAI_API_KEY")
 serp_api_key = os.getenv("SERPAPI_KEY")
