@@ -3,21 +3,16 @@ from phi.assistant import Assistant
 from phi.tools.serpapi_tools import SerpApiTools
 import streamlit as st
 from phi.llm.openai import OpenAIChat
-import os
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
 
 # Set up the Streamlit app
 st.title("AI Travel Planner ✈️")
 st.caption("Plan your next adventure with AI Travel Planner by researching and planning a personalized itinerary on autopilot using GPT-4o")
 
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
-os.environ["SERPAPI_KEY"] = st.secrets["SERPAPI_KEY"]
+
 # Get API keys from environment variables
-openai_api_key = os.getenv("OPENAI_API_KEY")
-serp_api_key = os.getenv("SERPAPI_KEY")
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+serp_api_key = st.secrets["SERPAPI_KEY"]
 
 if not openai_api_key or not serp_api_key:
     st.error("Please set OPENAI_API_KEY and SERPAPI_KEY in your .env file.")
